@@ -37,7 +37,7 @@ body {
     border-radius: 8px;
 }
 
-.data img {
+.dataimg {
     width: 32px;
     height: 32px;
     margin-right: 16px;
@@ -89,6 +89,11 @@ body {
     color: #5357B6;
 }
 
+.pluscolor {
+    color: #C5C6EF;
+    cursor: pointer;
+}
+
 .reply {
     font-weight: 500;
     font-size: 16px;
@@ -102,17 +107,16 @@ body {
     display: flex;
     background: #F5F6FA;
     border-radius: 10px;
-    width: 100px;
-    height: 40px;
+    width: 60px;
+    height: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 15px;
 }
-
 
 .main_reply {
     display: flex;
-    border-width: 2px;
-    border-color: red;
+    border-left: 2px solid black;
     width: 100%;
 }
 
@@ -138,7 +142,6 @@ body {
     background: #FFFFFF;
     border-radius: 8px;
     width: 311px;
-    min-height: 157px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,13 +153,13 @@ body {
     background: #FFFFFF;
     border: 1px solid #E9EBF0;
     border-radius: 8px;
-    width: 311px;
-    height: 64px;
+    min-width: 265px;
+    min-height: 80px;
 }
 
 .commenttxt::placeholder {
     text-align: left;
-    padding: 12px 0 0 24px;
+    vertical-align: top;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -179,7 +182,7 @@ body {
 }
 
 .imgbtn {
-    width: 90%;
+    width: 100%;
     margin-top: 16px;
     display: flex;
     align-items: center;
@@ -189,4 +192,66 @@ body {
 .comentimg {
     width: 32px;
     height: 32px;
+}
+
+.replyicon {
+    margin: 0px 8px 0px auto;
+    cursor: pointer;
+}
+
+textarea[type="text"] {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #67727E;
+    padding: 12px 24px 12px 24px;
+    resize: none;
+    cursor: pointer;
+    max-height: 400px;
+    overflow: hidden;
+
+}
+
+.youlogo {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    background: #5357B6;
+    border-radius: 2px;
+    color: #FFFFFF;
+    width: 36px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: -8px;
+}
+
+.optionclass {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    cursor: pointer;
+    width: 150px;
+}
+
+.delete {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ED6368;
+    margin-right: 16px;
+}
+
+.edit {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5357B6;
+}
+.icons{
+    margin-right: 8px;
 }
