@@ -6,10 +6,8 @@
 
 
 body {
-    width: 100vw;
     height: 100%;
     min-height: 100vh;
-    min-width: 100vw;
     font-family: 'Rubik', sans-serif;
     display: flex;
     justify-content: center;
@@ -23,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    overflow: hidden;
 }
 
 .datas {
@@ -74,6 +73,13 @@ body {
     margin: 16px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .scorediv {
     display: flex;
     justify-content: space-between;
@@ -116,7 +122,7 @@ body {
 
 .main_reply {
     display: flex;
-    border-left: 2px solid black;
+    border-left: 2px solid #ff0000;
     width: 100%;
 }
 
@@ -157,6 +163,13 @@ body {
     min-height: 80px;
 }
 
+.commenttxtedit {
+    background: #FFFFFF;
+    border: 1px solid #E9EBF0;
+    border-radius: 8px;
+    width: 83%;
+}
+
 .commenttxt::placeholder {
     text-align: left;
     vertical-align: top;
@@ -179,6 +192,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
+    margin-left: auto;
 }
 
 .imgbtn {
@@ -234,8 +248,12 @@ textarea[type="text"] {
     display: flex;
     justify-content: right;
     align-items: center;
-    cursor: pointer;
-    width: 150px;
+}
+
+.optionclass1 {
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .delete {
@@ -244,6 +262,7 @@ textarea[type="text"] {
     line-height: 24px;
     color: #ED6368;
     margin-right: 16px;
+    cursor: pointer;
 }
 
 .edit {
@@ -251,7 +270,92 @@ textarea[type="text"] {
     font-size: 16px;
     line-height: 24px;
     color: #5357B6;
+    cursor: pointer;
 }
-.icons{
+
+.icons {
     margin-right: 8px;
+    cursor: pointer;
+}
+
+.deleteScreen {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    width: 295px;
+    height: 176px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    gap: 16px;
+
+}
+
+#cancel {
+    background: #67727E;
+    border-radius: 8px;
+    width: 138px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 6px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+#delete {
+    background: #ED6368;
+    border-radius: 8px;
+    width: 138px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 6px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+#deleteQ {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #67727E;
+}
+
+#deleteS {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #334253;
+}
+
+.comment_remove {
+    animation: fadeOut 1.2s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
