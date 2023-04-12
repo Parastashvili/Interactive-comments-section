@@ -127,10 +127,6 @@ function editComment(replyId) {
 
   commentInput.setAttribute('type', 'text');
 
-  const editButton = replyElement.querySelector('.editBTN');
-  editButton.disabled = true;
-
-
   submitButton.textContent = 'UPDATE';
   submitButton.addEventListener('click', (event) => {
     event.preventDefault();
