@@ -71,6 +71,8 @@ body {
     line-height: 24px;
     color: var(--created);
     margin: 16px;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 form {
@@ -122,7 +124,7 @@ form {
 
 .main_reply {
     display: flex;
-    border-left: 2px solid #ff0000;
+    border-left: 2px solid #E9EBF0;
     width: 100%;
 }
 
@@ -162,6 +164,17 @@ form {
     min-width: 265px;
     min-height: 80px;
 }
+
+.commenttxt:focus {
+    outline: none !important;
+    border-color: #5357B6;
+}
+
+.commenttxtedit:focus {
+    outline: none !important;
+    border-color: #5357B6;
+}
+
 
 .commenttxtedit {
     background: #FFFFFF;
@@ -224,7 +237,6 @@ textarea[type="text"] {
     resize: none;
     cursor: pointer;
     max-height: 400px;
-    overflow: hidden;
 
 }
 

@@ -5,12 +5,12 @@ let comments = '';
 let replys = '';
 let sendComment = '';
 fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
+    .then(response => response.json())
+    .then(data => {
 
-    // Print comments from users
-    for (let comment of data.comments) {
-      comments += `
+        // Print comments from users
+        for (let comment of data.comments) {
+            comments += `
         <div class="datas">
             <div class="flexdiv">
                 <img class="dataimg" src="${comment.user.image.png}" alt="${comment.user.username}">
@@ -30,15 +30,15 @@ fetch('data.json')
         </div>
       `;
 
-      // Print reply for every comments
-      for (let reply of comment.replies) {
-        replys += `
+            // Print reply for every comments
+            for (let reply of comment.replies) {
+                replys += `
                   <div class="main_reply" id="${reply.id}"> 
                     <div class="data_reply">
                       <div class="flexdiv">
                         <img class="dataimg" src="${reply.user.image.png}" alt="${reply.user.username}">
                         <p class="title">${reply.user.username === `${data.currentUser.username}` ?
-            `${reply.user.username}<div class="youlogo">you</div>` : `${reply.user.username}`}</p>
+                        `${reply.user.username}<div class="youlogo">you</div>` : `${reply.user.username}`}</p>
                         <p class="createdAt">${reply.createdAt}</p>
                       </div>
                       <p class="comment"><span class="mention">@${reply.replyingTo} </span>${reply.content}</p>
@@ -50,22 +50,22 @@ fetch('data.json')
                         </div>
                         <div class="optionclass1">
                             <p class="reply">${reply.user.username === `${data.currentUser.username}` ?
-            `<div class="optionclass" onclick="deleteComment(${reply.id})">
+                        `<div class="optionclass" onclick="deleteComment(${reply.id})">
                             <img class="icons" src="./images/icon-delete.svg" alt="deleteicon">
-                            <div class="delete">Delete</div></div><div class="optionclass" onclick="editComment(${reply.id})">
+                            <div class="delete">Delete</div></div><div class="optionclass" id="editBTN" onclick="editComment(${reply.id})">
                             <img class="icons" src="./images/icon-edit.svg" alt="editicon">
                             <div class="edit">Edit</div></div>` :
-            `<img class="replyicon" src="./images/icon-reply.svg" alt="replyicon">Reply`}</p>
+                        `<img class="replyicon" src="./images/icon-reply.svg" alt="replyicon">Reply`}</p>
                         </div>
                         </div>
                     </div>
                   </div>
                 `;
-      }
+            }
 
-    }
-    // Current user
-    sendComment += `
+        }
+        // Current user
+        sendComment += `
             <div class="yourcomment ${data.currentUser.username === 'julisimo' ? 'julisimo-comment' : ''}">
               <textarea onkeyup="textAreaAdjust(this)" id="commenttxt" class="commenttxt" placeholder="Add a comment..." type="text"></textarea>
               <section class="imgbtn">
@@ -74,10 +74,10 @@ fetch('data.json')
               </section>
             </div>
           `;
-    content = comments + replys + sendComment;
-    visible.innerHTML = content;
-  })
-  .catch(error => console.error(error));
+        content = comments + replys + sendComment;
+        visible.innerHTML = content;
+    })
+    .catch(error => console.error(error));
 
 const commentarebi = document.querySelectorAll('.title');
 
@@ -111,61 +111,62 @@ const commentarebi = document.querySelectorAll('.title');
 // }
 
 function textAreaAdjust(element) {
-  element.style.height = "1px";
-  element.style.height = (element.scrollHeight) + "px";
+    element.style.height = "1px";
+    element.style.height = (element.scrollHeight) + "px";
 }
+
+
 function editComment(replyId) {
-  // Show a modal or input field where the user can edit their comment
-  const replyElement = document.getElementById(replyId);
-  const commentText = replyElement.querySelector('.comment').textContent;
-  const editForm = document.createElement('div');
-  const commentInput = document.createElement('textarea');
-  commentInput.textContent = commentText;
-  commentInput.innerText = commentText; // set the innerText property
-  const submitButton = document.createElement('div');
-  submitButton.classList.add('sendBTN');
+    document.getElementById('editBTN').removeAttribute('onclick');
+    document.getElementById('editBTN').onclick =null;
+    const replyElement = document.getElementById(replyId);
+    const commentText = replyElement.querySelector('.comment').textContent;
+    const editForm = document.createElement('div');
+    const commentInput = document.createElement('textarea');
+    commentInput.innerText = commentText;
+    const submitButton = document.createElement('div');
+    submitButton.textContent = 'UPDATE';
+    submitButton.classList.add('sendBTN');
+    commentInput.setAttribute('type', 'text');
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const editedComment = commentInput.value;
+        replyElement.querySelector('.comment').textContent = editedComment;
+        editForm.remove();
+        document.getElementById('editBTN').onclick = function () {
+            editComment(replyId);
+        }
+    });
+    editForm.appendChild(commentInput);
+    replyElement.querySelector('.comment').textContent = '';
+    commentInput.classList.add('commenttxtedit');
+    replyElement.querySelector('.comment').appendChild(editForm);
+    replyElement.querySelector('.comment').appendChild(submitButton);
+    let simagle = document.querySelector('.commenttxtedit');
+    simagle.style.height = (simagle.scrollHeight - 20) + "px";
+    
 
-  commentInput.setAttribute('type', 'text');
-
-  submitButton.textContent = 'UPDATE';
-  submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    const editedComment = commentInput.value;
-    // Update the comment content in the database and update the UI
-    // You can call a function here to make an API call to update the comment content in the database
-    // Then update the comment content in the UI
-    replyElement.querySelector('.comment').textContent = editedComment;
-    editButton.disabled = false;
-    // Hide the edit form
-    editForm.remove();
-  });
-  editForm.appendChild(commentInput);
-  replyElement.querySelector('.comment').textContent = '';
-  commentInput.classList.add('commenttxtedit');
-  replyElement.querySelector('.comment').appendChild(editForm);
-  replyElement.querySelector('.comment').appendChild(submitButton);
 }
 
 
 
 function deleteComment(replyId) {
-  let deleteSCR = document.getElementById("deleteScreen");
-  deleteSCR.style.display = "flex";
+    let deleteSCR = document.getElementById("deleteScreen");
+    deleteSCR.style.display = "flex";
 
-  // add event listener to "Yes" button
-  let yesButton = document.getElementById("delete");
-  yesButton.addEventListener("click", function () {
-    let replyElement = document.getElementById(replyId);
-    replyElement.classList.add('comment_remove');
-    setTimeout(() => replyElement.remove(), 1000);
+    // add event listener to "Yes" button
+    let yesButton = document.getElementById("delete");
+    yesButton.addEventListener("click", function () {
+        let replyElement = document.getElementById(replyId);
+        replyElement.classList.add('comment_remove');
+        setTimeout(() => replyElement.remove(), 1000);
 
-    deleteSCR.style.display = "none";
-  });
+        deleteSCR.style.display = "none";
+    });
 
-  // add event listener to "No" button
-  let noButton = document.getElementById("cancel");
-  noButton.addEventListener("click", function () {
-    deleteSCR.style.display = "none";
-  });
+    // add event listener to "No" button
+    let noButton = document.getElementById("cancel");
+    noButton.addEventListener("click", function () {
+        deleteSCR.style.display = "none";
+    });
 }
-
