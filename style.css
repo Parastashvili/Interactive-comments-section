@@ -1,373 +1,414 @@
 :root {
-    --nameColor: #334253;
-    --created: #67727E;
-    --bg: #F5F6FA;
+  --nameColor: #334253;
+  --created: #67727e;
+  --bg: #f5f6fa;
 }
 
-
 body {
-    height: 100%;
-    min-height: 100vh;
-    font-family: 'Rubik', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg);
+  height: 100%;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
 }
 
 .data {
-    width: 343px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    overflow: hidden;
+  width: 343px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
 }
 
 .datas {
-    background: #FFFFFF;
-    border-radius: 8px;
+  background: #ffffff;
+  border-radius: 8px;
 }
 
 .data_reply {
-    margin-left: 16px;
-    width: 325px;
-    background: #FFFFFF;
-    border-radius: 8px;
+  margin-left: 16px;
+  width: 325px;
+  background: #ffffff;
+  border-radius: 8px;
 }
 
 .dataimg {
-    width: 32px;
-    height: 32px;
-    margin-right: 16px;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
 }
 
 .flexdiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    margin: 16px 16px 0px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 16px 16px 0px 16px;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: var(--nameColor);
-    margin-right: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--nameColor);
+  margin-right: 15px;
 }
 
 .createdAt {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--created);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--created);
 }
 
 .comment {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--created);
-    margin: 16px;
-    overflow: hidden;
-    word-wrap: break-word;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--created);
+  margin: 16px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .scorediv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 16px 16px 16px;
 }
 
 .score {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #5357B6;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #5357b6;
 }
 
 .pluscolor {
-    color: #C5C6EF;
-    cursor: pointer;
+  color: #c5c6ef;
+  cursor: pointer;
 }
 
 .reply {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #5357B6;
-    border-width: 0px;
-    cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5357b6;
+  border-width: 0px;
+  cursor: pointer;
 }
 
 .vote {
-    display: flex;
-    background: #F5F6FA;
-    border-radius: 10px;
-    width: 60px;
-    height: 10px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
+  display: flex;
+  background: #f5f6fa;
+  border-radius: 10px;
+  width: 60px;
+  height: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
 }
 
 .main_reply {
-    display: flex;
-    border-left: 2px solid #E9EBF0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  border-left: 2px solid #e9ebf0;
+  width: 100%;
+}
+.replying {
+  width: 90%;
+  height: 50px;
+  background-color: yellow;
 }
 
 .score {
-    margin: 10px;
+  margin: 10px;
 }
 
 .data button {
-    color: #C5C6EF;
-    border-width: 0px;
-    background: #F5F6FA;
-    cursor: pointer;
+  color: #c5c6ef;
+  border-width: 0px;
+  background: #f5f6fa;
+  cursor: pointer;
 }
 
 .mention {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #5357B6;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5357b6;
 }
 
 .yourcomment {
-    background: #FFFFFF;
-    border-radius: 8px;
-    width: 311px;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 311px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+.commenttxtreply {
+  background: #ffffff;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  min-height: 80px;
+  margin: auto;
+  width: 175px;
+}
+.flexer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 16px;
+    border-radius: 10px;
+}
+.commenttxtreply:focus {
+  outline: none !important;
+  border-color: #5357b6;
+}
+.replyBTN {
+    background: #5357b6;
+    border-radius: 8px;
+    width: 20px;
+    height: 86px;
+    padding: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px;
-}
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-left: auto;
+  }
 
 .commenttxt {
-    background: #FFFFFF;
-    border: 1px solid #E9EBF0;
-    border-radius: 8px;
-    min-width: 265px;
-    min-height: 80px;
+  background: #ffffff;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  min-width: 265px;
+  min-height: 80px;
 }
 
 .commenttxt:focus {
-    outline: none !important;
-    border-color: #5357B6;
+  outline: none !important;
+  border-color: #5357b6;
 }
 
 .commenttxtedit:focus {
-    outline: none !important;
-    border-color: #5357B6;
+  outline: none !important;
+  border-color: #5357b6;
 }
 
-
 .commenttxtedit {
-    background: #FFFFFF;
-    border: 1px solid #E9EBF0;
-    border-radius: 8px;
-    width: 83%;
+  background: #ffffff;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  width: 82%;
 }
 
 .commenttxt::placeholder {
-    text-align: left;
-    vertical-align: top;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #67727E;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #67727e;
 }
 
 .sendBTN {
-    background: #5357B6;
-    border-radius: 8px;
-    width: 104px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    margin-left: auto;
+  background: #5357b6;
+  border-radius: 8px;
+  width: 104px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-left: auto;
 }
 
+
 .imgbtn {
-    width: 100%;
-    margin-top: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .comentimg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .replyicon {
-    margin: 0px 8px 0px auto;
-    cursor: pointer;
+  margin: 0px 8px 0px auto;
+  cursor: pointer;
 }
 
 textarea[type="text"] {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #67727E;
-    padding: 12px 24px 12px 24px;
-    resize: none;
-    cursor: pointer;
-    max-height: 400px;
-
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #67727e;
+  padding: 12px 24px 12px 24px;
+  resize: none;
+  cursor: pointer;
+  max-height: 400px;
 }
 
 .youlogo {
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 15px;
-    background: #5357B6;
-    border-radius: 2px;
-    color: #FFFFFF;
-    width: 36px;
-    height: 19px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 16px;
-    margin-left: -8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  background: #5357b6;
+  border-radius: 2px;
+  color: #ffffff;
+  width: 36px;
+  height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  margin-left: -8px;
 }
 
 .optionclass {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 .optionclass1 {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 .delete {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #ED6368;
-    margin-right: 16px;
-    cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ed6368;
+  margin-right: 16px;
+  cursor: pointer;
 }
 
 .edit {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #5357B6;
-    cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5357b6;
+  cursor: pointer;
 }
 
 .icons {
-    margin-right: 8px;
-    cursor: pointer;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
 .deleteScreen {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px;
-    width: 295px;
-    height: 176px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    gap: 16px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  width: 295px;
+  height: 176px;
+  background: #ffffff;
+  border-radius: 8px;
+  gap: 16px;
 }
 
 #cancel {
-    background: #67727E;
-    border-radius: 8px;
-    width: 138px;
-    height: 48px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-right: 6px;
-    border-width: 0px;
-    cursor: pointer;
+  background: #67727e;
+  border-radius: 8px;
+  width: 138px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 6px;
+  border-width: 0px;
+  cursor: pointer;
 }
 
 #delete {
-    background: #ED6368;
-    border-radius: 8px;
-    width: 138px;
-    height: 48px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-left: 6px;
-    border-width: 0px;
-    cursor: pointer;
+  background: #ed6368;
+  border-radius: 8px;
+  width: 138px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 6px;
+  border-width: 0px;
+  cursor: pointer;
 }
 
 #deleteQ {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #67727E;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #67727e;
 }
 
 #deleteS {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: #334253;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #334253;
 }
 
 .comment_remove {
-    animation: fadeOut 1.2s forwards;
+  animation: fadeOut 1.2s forwards;
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
